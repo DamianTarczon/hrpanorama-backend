@@ -32,9 +32,9 @@ class PDFService
 
     $pdf->Image($logoPath, 10, 10, $logoWidth, $logoHeight, 'PNG');
 
-    $pdf->SetFont('helvetica', 'B', 14);
+    $pdf->SetFont('dejavusans', 'B', 16);
     $pdf->SetY($logoHeight + 20);
-    $pdf->Cell(0, 0, $text, 0, 1, 'C', 0, '', 0);
+    $pdf->MultiCell(0, 10, $text, 0, 'C', false, 1, '', '', true, 0, false, true, 0, 'T', false);
 
     $qrCodeSize = 50;
     $x = ($pdf->getPageWidth() - $qrCodeSize) / 2;
